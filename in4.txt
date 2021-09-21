@@ -1,0 +1,7 @@
+d
+w
+a b 1
+b c 2
+c d 3
+d e 4
+e a 5
