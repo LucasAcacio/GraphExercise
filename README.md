@@ -22,7 +22,7 @@
 
  - You can use input using the command line to input a edge or a vertex one by one
  - This program can process directed, non-directed, weighted and non-weighted graphs
- - After processing you can check vertex adjacency, degree and if 2 vertex are adjacent
+ - After processing you can check vertex adjacency, degree and if 2 vertex are adjacent calling a post operations list option
 
  ## Running:
  - run ```~$ python3 main.py``` to execute the program
