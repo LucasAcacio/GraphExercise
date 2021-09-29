@@ -122,7 +122,7 @@ print(f"| Graph size: {len(vertexList)}")
 ######################################
 postOps = ""
 while postOps != "4":	
-	postOps = input("\n############## Post operationslist ##############\n| 1 - Check vertex adjacency list\n| 2 - Check vertex degree\n| 3 - Check if 2 vertex are adjacent\n| 4 - Quit\n >>>")
+	postOps = input("\n############## Post operations list ##############\n| 1 - Check vertex adjacency list\n| 2 - Check vertex degree\n| 3 - Check if 2 vertex are adjacent\n| 4 - Quit\n >>>")
 	
 	if postOps == "1":
 		vertex = input("\n|Insert vertex name: ")
