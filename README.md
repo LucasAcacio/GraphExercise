@@ -25,4 +25,4 @@
  - After processing you can check vertex adjacency, degree and if 2 vertex are adjacent
 
  ## Running:
- - run ``~$ python3 main.py``` to execute the program
+ - run ```~$ python3 main.py``` to execute the program
