@@ -129,11 +129,14 @@ while postOps != "4":
 		if vertex in vertexList:
 			if val == "n":
 				adjList = res.getNonDirectedAdjacencyList(vertex, edgeList)
+				print(f"Vertex <{vertex}> adjacency list: {adjList}")
 			else:
-				adjList = res.getDirectedAdjacencyList(vertex, edgeList)
-
-			print(f"Vertex <{vertex}> adjacency list: {adjList}")
-
+				entranceList = res.getEntranceAdjacencyList(vertex, edgeList)
+				exitList = res.getExitAdjacencyList(vertex, edgeList)
+				
+				if len(entranceList) > 0: print(f"Vertex <{vertex}> <--- {entranceList}")
+				if len(exitList) > 0: print(f"Vertex <{vertex}> ---> {exitList}")
+			
 		else:
 			print("Vertex not present!")
 
@@ -142,11 +145,16 @@ while postOps != "4":
 		if vertex in vertexList:
 			if val == "n":
 				adjList = res.getNonDirectedAdjacencyList(vertex, edgeList)
+    
+				print(f"Vertex <{vertex}> degree: {len(adjList)}")
+    
 			else:
-				adjList = res.getDirectedAdjacencyList(vertex, edgeList)
-
-			print(f"Vertex <{vertex}> degree: {len(adjList)}")
-
+				entranceList = res.getEntranceAdjacencyList(vertex, edgeList)
+				exitList = res.getExitAdjacencyList(vertex, edgeList)
+    
+				print(f"Vertex <{vertex}> entrance Degree: {len(entranceList)}")
+				print(f"Vertex <{vertex}> exit Degree: {len(exitList)}")
+    
 		else:
 			print("Vertex not present!")
    

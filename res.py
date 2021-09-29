@@ -68,13 +68,19 @@ def getNonDirectedAdjacencyList(vertex, edgeList):
     
     return set(adjList)
         
-def getDirectedAdjacencyList(vertex, edgeList):
+def getExitAdjacencyList(vertex, edgeList):
     adjList = []
     for x in edgeList:
         if vertex == x[0]: adjList.append(x[1])
     
     return adjList
 
+def getEntranceAdjacencyList(vertex, edgeList):
+  adjList = []
+  for x in edgeList:
+    if vertex == x[1]: adjList.append(x[0])
+  
+  return adjList
 
     
       
