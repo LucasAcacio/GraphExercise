@@ -59,7 +59,7 @@ elif option == 'n':
 
 		edgeList.append(aux)
 		for x in edgeList:
-			if x[0] == x[1]: edgeList.pop(x)
+			if x[0] == x[1]: edgeList.pop(edgeList.index(x))
 
 ##########################################
 ############### PROCESS OP ###############
@@ -82,7 +82,6 @@ if val == 'n':
 
 	elif val2 == 'w':
 		matrix = res.getNonDirectedWeightedGraph(vertexList, edgeList)
-		print(f"{vertexList}")
 
 		count = 0
 		for a in matrix:
@@ -95,7 +94,6 @@ if val == 'n':
 elif val == 'd':
 	if val2 == 'n':
 		matrix = res.getDirectedGraphMatrix(vertexList, edgeList)
-		print(f"{vertexList}")
 		count = 0
 		for a in matrix:
 			print(f"{vertexList[count]} {a}")
@@ -104,7 +102,6 @@ elif val == 'd':
 	elif val2 == 'w':
 		matrix = res.getDirectedWeightedGraph(vertexList, edgeList)
 
-		print(f"{vertexList}")
 		count = 0
 		for a in matrix:
 			print(f"{vertexList[count]} {a}")
@@ -161,12 +158,12 @@ while postOps != "4":
 					adjList1 = res.getNonDirectedAdjacencyList(vertex1, edgeList)
 		
 					if vertex2 in adjList1: print(f"\nVertex <{vertex1}> and <{vertex2}> are adjacent>")
-					else: print(f"\nVertex <{vertex1}> and <{vertex2}> are not adjacent>")
+					else: print(f"\nVertex <{vertex1}> and <{vertex2}> are not adjacent")
 		
 				else:
 					adjList1 = res.getDirectedAdjacencyList(vertex1, edgeList)
 					if vertex2 in adjList1: print(f"\nVertex <{vertex1}> is adjacent to <{vertex2}>")
-					else: print(f"\nVertex <{vertex1}> is not adjacent to <{vertex2} are not pairs>")
+					else: print(f"\nVertex <{vertex1}> is not adjacent to <{vertex2}>")
 	
 			else:
 				print("\nInvalid pair of vertex")
