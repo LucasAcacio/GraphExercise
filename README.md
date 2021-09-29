@@ -15,12 +15,11 @@
  Insert vertex or edge                                                                                           
  Insert vertex or edge                                                                                         
 
-- Insert the edge in the format <first_edge> <second_edge> <weight> 
+- Insert the edge in the format "<first_vertex> <second_vertex> <weight>" 
 - Weight is only required if you choose a weighted graph
-- If you choose a directed graph the <first_edge> will point to <second_edge>
-- If you want to just add a vertex, use the format <vertex_A> <vertex_A>
+- If you choose a directed graph the "<first_vertex> <second_vertex>" edge will go from first_vertex to second_vertex
+- If you want to just add a vertex, use the format "<vertex_A> <vertex_A>"
 
  - You can use input using the command line to input a edge or a vertex one by one
  - This program can process directed, non-directed, weighted and non-weighted graphs
  - After processing you can check vertex adjacency, degree and if 2 vertex are adjacent
- 
