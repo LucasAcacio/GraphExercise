@@ -24,7 +24,9 @@ if option == 'y':
 		edgeList.append(node)
   
 	for x in edgeList:
-		if x[0] == x[1]: edgeList.pop(x)
+		if x[0] == x[1]: 
+			edgeList.remove(x)
+			if x[0] not in vertexList: vertexList.append(x[0])
   
 	for i in edgeList:
 		for x in i:
@@ -129,13 +131,16 @@ while postOps != "4":
 		if vertex in vertexList:
 			if val == "n":
 				adjList = res.getNonDirectedAdjacencyList(vertex, edgeList)
-				print(f"Vertex <{vertex}> adjacency list: {adjList}")
+				if len(adjList) == 0: print(f"Vertex <{vertex}> adjacency list: [no items here]")
+				else: print(f"Vertex <{vertex}> adjacency list: {adjList}")
 			else:
 				entranceList = res.getEntranceAdjacencyList(vertex, edgeList)
 				exitList = res.getExitAdjacencyList(vertex, edgeList)
-				
-				if len(entranceList) > 0: print(f"Vertex <{vertex}> <--- {entranceList}")
-				if len(exitList) > 0: print(f"Vertex <{vertex}> ---> {exitList}")
+				if len(entranceList) == 0: entranceList = "[no items here]"
+				if len(exitList) == 0: exitList = "[no items here]"
+    
+				print(f"Vertex <{vertex}> <--- {entranceList}")
+				print(f"Vertex <{vertex}> ---> {exitList}")
 			
 		else:
 			print("Vertex not present!")
@@ -169,12 +174,15 @@ while postOps != "4":
 					else: print(f"\nVertex <{vertex1}> and <{vertex2}> are not adjacent")
 		
 				else:
-					adjList1 = res.getDirectedAdjacencyList(vertex1, edgeList)
-					if vertex2 in adjList1: print(f"\nVertex <{vertex1}> is adjacent to <{vertex2}>")
+					exitList = res.getExitAdjacencyList(vertex1, edgeList)
+     
+					if vertex2 in exitList: print(f"\nVertex <{vertex1}> is adjacent to <{vertex2}>")
 					else: print(f"\nVertex <{vertex1}> is not adjacent to <{vertex2}>")
 	
 			else:
 				print("\nInvalid pair of vertex")
+
+	else: print("\nInvalid command...\n")
 
 
 
